@@ -1,0 +1,45 @@
+#login_warp
+{
+	padding:30px;
+	text-align:center;
+	font-size:12px;
+	background-color:#fff;
+
+}
+.login_tip
+{
+	word-break:normal;
+	text-align:left;
+	font-weight:bold;
+	font-size:14px;
+	padding: 0px 30px 30px 30px;
+}
+#loginform
+{
+	margin:0px auto;
+	width:300px;
+	text-align:center;
+}
+.input_div
+{
+	padding:5px;
+	text-align:left;
+	overflow:auto;
+	vertical-align:top;
+}
+.login_text
+{
+	float:left;
+	font-size:16px;
+}
+#username, #passwd
+{
+	float:right;
+	font-size:16px;
+	width:200px;
+}
+.login_button
+{
+	margin:15px 5px 5px 5px;
+	font-size:12px;
+}
