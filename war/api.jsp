@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
-		<title> 
+		<title> Hello,
 		Jtweet,Twitter API proxy in Java on GAE.
 		</title>
 	</head>
@@ -14,5 +14,6 @@
 		<% out.print(request.getServerName()); %>
 		/api</b> as a Twitter API URI in your Twitter Client.
 		</div>
+
 	</body>
 </html>
