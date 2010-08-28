@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 	<head>
-		<title> Hello,
+		<title>Hello,
 		Jtweet,Twitter API proxy in Java on GAE.
 		</title>
 	</head>
