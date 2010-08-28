@@ -26,18 +26,19 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package twitter4j;
 
-import twitter4j.http.AccessToken;
-import twitter4j.http.HttpClient;
-import twitter4j.http.PostParameter;
-import twitter4j.http.RequestToken;
-import twitter4j.http.Response;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
+
+import twitter4j.http.AccessToken;
+import twitter4j.http.HttpClient;
+import twitter4j.http.PostParameter;
+import twitter4j.http.RequestToken;
+import twitter4j.http.Response;
+import twitter4j.org.json.JSONException;
 
 /**
  * A java reporesentation of the <a href="http://apiwiki.twitter.com/">Twitter
@@ -3364,8 +3365,31 @@ public class Twitter extends TwitterSupport implements java.io.Serializable {
 		throw new TwitterException("this method is not supported by the Twitter API anymore", new NoSuchMethodException("this method is not supported by the Twitter API anymore"));
 	}
 
+    /**
+     * Retweets a tweet. Returns the original tweet with retweet details embedded.
+     * 
+     * @param statusId
+     *  The status id will be retweet.
+     * 
+     * @return the Status
+     * @throws JSONException 
+     * @throws TwitterException
+     * @see <a
+	 *      href="http://dev.twitter.com/doc/post/statuses/retweet/:id">Twitter
+	 *      API Wiki / Twitter REST API Method: POST statuses/retweet/:id</a>
+     */
+    public Status retweetStatus(long statusId) throws TwitterException, JSONException {
+        //ensureAuthorizationEnabled();
+        return new Status(http.post(baseURL + "statuses/retweet/" + statusId + ".json",
+                new PostParameter[]{new PostParameter("source",source )}, true).asString());
+    }
+	
+	
 	private SimpleDateFormat format = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:ss z", Locale.ENGLISH);
 
+	
+	
+	
 	@Override
 	public boolean equals(Object o) {
 		if (this == o)
@@ -3403,4 +3427,6 @@ public class Twitter extends TwitterSupport implements java.io.Serializable {
 	public String toString() {
 		return "Twitter{" + "http=" + http + ", baseURL='" + baseURL + '\'' + ", searchBaseURL='" + searchBaseURL + '\'' + ", source='" + source + '\'' + ", format=" + format + '}';
 	}
+	
+	
 }

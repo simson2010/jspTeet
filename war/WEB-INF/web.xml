@@ -148,4 +148,13 @@
 		<servlet-name>MobileReply</servlet-name>
 		<url-pattern>/mat</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>TwitterRT</servlet-name>
+		<servlet-class>jtweet.web.RetweetByTwitterServlet</servlet-class>
+	</servlet>
+		<servlet-mapping>
+		<servlet-name>TwitterRT</servlet-name>
+		<url-pattern>/trt</url-pattern>
+		<url-pattern>/mtrt</url-pattern>
+	</servlet-mapping>
 </web-app>
