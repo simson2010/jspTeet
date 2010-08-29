@@ -1,39 +1,39 @@
-JspTeetÊ¹ÓÃJTweetÔ´´úÂë.
+JspTeetä½¿ç”¨JTweetæºä»£ç .
 
-JTweetÊ¹ÓÃÁËTwitter4JµÄÔ´´úÂë¡£¸ÃÈí¼þ×ñÑ­BSD-styleÐí¿ÉÐ­Òé¡£
-¾ßÌå²Î¿´£ºhttp://yusuke.homeip.net/twitter4j/en/index.html#license
+JTweetä½¿ç”¨äº†Twitter4Jçš„æºä»£ç ã€‚è¯¥è½¯ä»¶éµå¾ªBSD-styleè®¸å¯åè®®ã€‚
+å…·ä½“å‚çœ‹ï¼šhttp://yusuke.homeip.net/twitter4j/en/index.html#license
 
-Twitter4JÊ¹ÓÃÁËÀ´×ÔJSON.orgµÄÈí¼þ´¦ÀíTwitterµÄÏìÓ¦£¬Ïà¹ØÐ­Òé²Î¿´£º
+Twitter4Jä½¿ç”¨äº†æ¥è‡ªJSON.orgçš„è½¯ä»¶å¤„ç†Twitterçš„å“åº”ï¼Œç›¸å…³åè®®å‚çœ‹ï¼š
 http://www.json.org/license.html
 
-JTweetÊ¹ÓÃÁËjson-simple¿â´¦ÀíjsonÊý¾Ý£¬¸ÃÈí¼þ×ñÑ­ApacheÐí¿ÉÐ­Òé¡£
-¾ßÌå²Î¿´£ºhttp://www.apache.org/licenses/LICENSE-2.0
+JTweetä½¿ç”¨äº†json-simpleåº“å¤„ç†jsonæ•°æ®ï¼Œè¯¥è½¯ä»¶éµå¾ªApacheè®¸å¯åè®®ã€‚
+å…·ä½“å‚çœ‹ï¼šhttp://www.apache.org/licenses/LICENSE-2.0
 
-JTweetÊ¹ÓÃÁËFreeMarker¿â´¦ÀíÄ£°å£¬¸ÃÈí¼þ×ñÑ­BSD-styleÐí¿ÉÐ­Òé¡£
+JTweetä½¿ç”¨äº†FreeMarkeråº“å¤„ç†æ¨¡æ¿ï¼Œè¯¥è½¯ä»¶éµå¾ªBSD-styleè®¸å¯åè®®ã€‚
 This product includes software developed by the Visigoth Software 
 Society (http://www.visigoths.org/).
-¾ßÌå²Î¿´£ºhttp://freemarker.org/docs/app_license.html
+å…·ä½“å‚çœ‹ï¼šhttp://freemarker.org/docs/app_license.html
 
-JTweetÊ¹ÓÃÁËJakarta-Oro¿â´¦ÀíÕýÔò±í´ïÊ½£¬¸ÃÈí¼þ×ñÑ­ApacheÐí¿ÉÐ­Òé¡£
-¾ßÌå²Î¿´£ºhttp://www.apache.org/licenses/LICENSE-2.0
+JTweetä½¿ç”¨äº†Jakarta-Oroåº“å¤„ç†æ­£åˆ™è¡¨è¾¾å¼ï¼Œè¯¥è½¯ä»¶éµå¾ªApacheè®¸å¯åè®®ã€‚
+å…·ä½“å‚çœ‹ï¼šhttp://www.apache.org/licenses/LICENSE-2.0
 
 
 -----------------------------------------------------------------
-±¾Èí¼þ²ÉÓÃGPL v3Ðí¿ÉÐ­Òé·¢²¼£º
+æœ¬è½¯ä»¶é‡‡ç”¨GPL v3è®¸å¯åè®®å‘å¸ƒï¼š
 
-°æÈ¨ËùÓÐ(C) 2009 Yu Lei
-
-
- * ±¾³ÌÐòÎª×ÔÓÉÈí¼þ£»Äú¿ÉÒÀ¾Ý×ÔÓÉÈí¼þ»ù½ð»áËù·¢±íµÄGNUÍ¨ÓÃ¹«¹²ÊÚÈ¨
-   Ìõ¿î£¬¶Ô±¾³ÌÐòÔÙ´Î·¢²¼ºÍ/»òÐÞ¸Ä£»ÎÞÂÛÄúÒÀ¾ÝµÄÊÇ±¾ÊÚÈ¨µÄµÚÈý°æ£¬
-   »ò£¨Äú¿ÉÑ¡µÄ£©ÈÎÒ»ÈÕºó·¢ÐÐµÄ°æ±¾¡£
+ç‰ˆæƒæ‰€æœ‰(C) 2009 Yu Lei
 
 
- * ±¾³ÌÐòÊÇ»ùÓÚÊ¹ÓÃÄ¿µÄ¶ø¼ÓÒÔ·¢²¼£¬È»¶ø²»¸ºÈÎºÎµ£±£ÔðÈÎ£»ÒàÎÞ¶ÔÊÊÊÛ
-   ÐÔ»òÌØ¶¨Ä¿µÄÊÊÓÃÐÔËùÎªµÄÄ¬Ê¾ÐÔµ£±£¡£ÏêÇéÇë²ÎÕÕGNUÍ¨ÓÃ¹«¹²ÊÚÈ¨¡£
+ * æœ¬ç¨‹åºä¸ºè‡ªç”±è½¯ä»¶ï¼›æ‚¨å¯ä¾æ®è‡ªç”±è½¯ä»¶åŸºé‡‘ä¼šæ‰€å‘è¡¨çš„GNUé€šç”¨å…¬å…±æŽˆæƒ
+   æ¡æ¬¾ï¼Œå¯¹æœ¬ç¨‹åºå†æ¬¡å‘å¸ƒå’Œ/æˆ–ä¿®æ”¹ï¼›æ— è®ºæ‚¨ä¾æ®çš„æ˜¯æœ¬æŽˆæƒçš„ç¬¬ä¸‰ç‰ˆï¼Œ
+   æˆ–ï¼ˆæ‚¨å¯é€‰çš„ï¼‰ä»»ä¸€æ—¥åŽå‘è¡Œçš„ç‰ˆæœ¬ã€‚
 
 
- * ÄúÓ¦ÒÑÊÕµ½¸½ËæÓÚ±¾³ÌÐòµÄGNUÍ¨ÓÃ¹«¹²ÊÚÈ¨µÄ¸±±¾£»Èç¹ûÃ»ÓÐ£¬Çë²ÎÕÕ
+ * æœ¬ç¨‹åºæ˜¯åŸºäºŽä½¿ç”¨ç›®çš„è€ŒåŠ ä»¥å‘å¸ƒï¼Œç„¶è€Œä¸è´Ÿä»»ä½•æ‹…ä¿è´£ä»»ï¼›äº¦æ— å¯¹é€‚å”®
+   æ€§æˆ–ç‰¹å®šç›®çš„é€‚ç”¨æ€§æ‰€ä¸ºçš„é»˜ç¤ºæ€§æ‹…ä¿ã€‚è¯¦æƒ…è¯·å‚ç…§GNUé€šç”¨å…¬å…±æŽˆæƒã€‚
+
+
+ * æ‚¨åº”å·²æ”¶åˆ°é™„éšäºŽæœ¬ç¨‹åºçš„GNUé€šç”¨å…¬å…±æŽˆæƒçš„å‰¯æœ¬ï¼›å¦‚æžœæ²¡æœ‰ï¼Œè¯·å‚ç…§
    <http://www.gnu.org/licenses/gpl.html>.
 
 
