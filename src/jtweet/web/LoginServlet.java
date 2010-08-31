@@ -50,6 +50,10 @@ public class LoginServlet extends JTweetServlet {
 			browser = "operamini";
 		}else if (UA.contains("MSIE 7.0")) {		
 			browser = "ie7";
+		}else if(UA.contains("UCWEB")){
+			browser = "UC";
+		}else if(UA.contains("Chrome")){
+			browser = "Chrome";
 		} else {
 			browser = "other";
 		}
@@ -104,7 +108,13 @@ public class LoginServlet extends JTweetServlet {
 						cookie.setPath("/");
 						resp.addCookie(cookie);
 					}
+					detectBrowser(req);
+					if(browser.equalsIgnoreCase("operamini")||
+							browser.equalsIgnoreCase("ucweb")){
+						resp.sendRedirect("/mhome");
+					}else{
 					resp.sendRedirect("/home");
+					}
 				} catch (TwitterException e) {
 					redirectLogin(req, resp);
 					e.printStackTrace();
@@ -131,7 +141,12 @@ public class LoginServlet extends JTweetServlet {
 						twitter.verifyCredentials();
 						session.setAttribute("accessToken", accessToken);
 						session.setAttribute("accessTokenSecret", accessTokenSecret);
+						if(browser.equalsIgnoreCase("operamini")||
+								browser.equalsIgnoreCase("ucweb")){
+							resp.sendRedirect("/mhome");
+						}else{
 						resp.sendRedirect("/home");
+						}
 					} catch (TwitterException e) {
 						logger.log(Level.SEVERE, e.getMessage());
 						redirectLogin(req, resp);

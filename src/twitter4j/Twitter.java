@@ -47,7 +47,7 @@ import twitter4j.org.json.JSONException;
  * @author Yusuke Yamamoto - yusuke at mac.com
  */
 public class Twitter extends TwitterSupport implements java.io.Serializable {
-	private String baseURL = "http://twitter.com/";
+	private String baseURL = "http://api.twitter.com/1/";
 	private String searchBaseURL = "http://search.twitter.com/";
 	private static final long serialVersionUID = -1486360080128882436L;
 
@@ -2223,9 +2223,14 @@ public class Twitter extends TwitterSupport implements java.io.Serializable {
 	 *      API Wiki / Twitter REST API Method: direct_messages new</a>
 	 */
 	public DirectMessage sendDirectMessage(String id, String text) throws TwitterException {
-		return new DirectMessage(http.post(baseURL + "direct_messages/new.xml", new PostParameter[] { new PostParameter("user", id), new PostParameter("text", text) }, true), this);
+		return new DirectMessage(http.post(baseURL + "direct_messages/new.xml", new PostParameter[] { new PostParameter("user_id", id), new PostParameter("text", text),new PostParameter("screen_name","") }, true), this);
 	}
 
+	public DirectMessage sendDirectMessage(String id, String screenName, String text ) throws TwitterException {
+		Response resp = http.post(baseURL + "direct_messages/new.xml", new PostParameter[] { new PostParameter("user_id", id), new PostParameter("text", text),new PostParameter("screen_name",screenName) }, true);
+		
+		return new DirectMessage(resp, this);
+	}
 	/**
 	 * Destroys the direct message specified in the required ID parameter. The
 	 * authenticating user must be the recipient of the specified direct

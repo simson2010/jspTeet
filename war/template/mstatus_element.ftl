@@ -21,12 +21,12 @@
 			<a href="/mat?id=${s.id?c}&quote=1" class="tweet_action_quote">引用回复</a>
 			<a href="/mtrt?id=${s.id?c}&home=/mhome" class="tweet_action_rt">锐推</a>
 			<#if s.favorited>
-				<a href="javascript:void(0);" class="tweet_action_unfavor">取消收藏</a>			
+				<a href="/maction?type=unfavor&id=${s.id?c}" class="tweet_action_unfavor">取消收藏</a>			
 			<#else>
-				<a href="javascript:void(0);" class="tweet_action_favor">收藏</a>
+				<a href="/maction?type=favor&id=${s.id?c}" class="tweet_action_favor">收藏</a>
 			</#if>
 			<#if user.screenName?lower_case == s.user.screenName?lower_case>
-				<a href="javascript:void(0);" class="tweet_action_del">删除</a>
+				<a href="/maction?type=delete&id=${s.id?c}" class="tweet_action_del">删除</a>
 			</#if>
 		</span>
 	</div>

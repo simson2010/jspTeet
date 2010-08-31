@@ -30,6 +30,7 @@
 	<div id="statuses" class="statuses hide">
 			<span class="tweet_tip">你在做什么？ 按Ctrl+Enter快捷发布</span><span class="tweet_count_info">剩余：<span id="tweet_count" class="tweet_count_green">140</span>字</span><br />
 			<textarea id="tweet_msg" name="tweet_msg"></textarea><br />
+			<input type='hidden' name='sender_user_Id' id='sender_user_Id'/>
 			<button id="tweet_submit">发送！</button>
 			<button id="tweet_clear">清除</button>
 		</div>

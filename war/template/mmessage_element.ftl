@@ -11,11 +11,10 @@
 			<#if m.senderScreenName?lower_case == user.screenName?lower_case><span class="msg_to">发送至:<a href="/user?id=${m.recipientScreenName}" class="msg_sendto">${m.recipientScreenName}</a> </span></#if>
 			<span class="msg_time">发送于${m.createdAt?datetime}</span>
 		</span>
-		<span class="msg_sender_id">${m.senderId?c}</span>
 		<span class="msg_id">${m.id?c}</span>
 		<div class="fixed"></div>
 		<span class="msg_action">
-			<#if m.senderScreenName?lower_case != user.screenName?lower_case><a href="javascript:void(0);" class="msg_action_reply">回复</a></#if>
+			<#if m.senderScreenName?lower_case != user.screenName?lower_case><a href="/mmsgrply?id=${m.senderScreenName}&dmId=${m.id?c}&senderId=${m.senderId?c}" class="msg_action_reply">回复</a></#if>
 			<a href="javascript:void(0);" class="msg_action_del">删除</a>
 		</span>
 	</div>

@@ -1,6 +1,7 @@
 package jtweet.web;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,8 +17,11 @@ import twitter4j.TwitterException;
 public class MobileActionServlet extends JTweetServlet {
 	protected boolean rst = false;
 
+	static final Logger logger = Logger.getLogger(MobileActionServlet.class.getName());
+	
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		doAction(req, resp);
+		
 	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
@@ -25,9 +29,11 @@ public class MobileActionServlet extends JTweetServlet {
 	}
 
 	public void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-		resp.setContentType("application/x-javascript; charset=UTF-8");
+		//resp.setContentType("application/x-javascript; charset=UTF-8");
+		resp.setContentType("text/html; charset=UTF-8");
 		String action = req.getParameter("type");
 		String id = req.getParameter("id");
+		String senderUserId = req.getParameter("senderId");
 		JSONObject json = new JSONObject();
 
 		if (isLogin(req)) {
@@ -63,7 +69,7 @@ public class MobileActionServlet extends JTweetServlet {
 						tweet = tweet.substring(0, 139) + "…";
 					}
 					if (id != null) {
-						twitter.sendDirectMessage(id, tweet);
+						twitter.sendDirectMessage(senderUserId,id, tweet);
 						rst = true;
 					} else {
 						json.put("info", "ID err");
@@ -169,34 +175,36 @@ public class MobileActionServlet extends JTweetServlet {
 
 		if (rst) {
 			json.put("result", "ok");
+			resp.sendRedirect("/mhome");
+			return;
 		} else {
 			json.put("result", "err");
 		}
 		resp.getWriter().print(json.toJSONString());
 	}
 
-	protected String ShortURL(String text) {
-		String rst = text;
-		String url_reg = "m/\\b[a-zA-Z]+:\\/\\/[\\w_.\\-]+\\.[a-zA-Z]{2,6}[\\/\\w\\-~.?=&%#+$*!:;]*\\b/i";
-		String temp = text;
-
-		Perl5Util perl = new Perl5Util();
-		while (perl.match(url_reg, temp)) {
-			String url = perl.group(0);
-			if (url.length() > 30) {
-				String short_url = ShortURL.getIsgdURL(url);
-				if (short_url != null)
-					rst = rst.replace(url, short_url);
-				/*
-				 * try { rst = rst.replace(url, Bitly.getBitlyURL(url)); } catch
-				 * (JSONException e) { // TODO Auto-generated catch block
-				 * e.printStackTrace(); } catch (IOException e) { // TODO
-				 * Auto-generated catch block e.printStackTrace(); }
-				 */
-			}
-			temp = perl.postMatch();
-		}
-
-		return rst;
-	}
+//	protected String ShortURL(String text) {
+//		String rst = text;
+//		String url_reg = "m/\\b[a-zA-Z]+:\\/\\/[\\w_.\\-]+\\.[a-zA-Z]{2,6}[\\/\\w\\-~.?=&%#+$*!:;]*\\b/i";
+//		String temp = text;
+//
+//		Perl5Util perl = new Perl5Util();
+//		while (perl.match(url_reg, temp)) {
+//			String url = perl.group(0);
+//			if (url.length() > 30) {
+//				String short_url = ShortURL.getIsgdURL(url);
+//				if (short_url != null)
+//					rst = rst.replace(url, short_url);
+//				/*
+//				 * try { rst = rst.replace(url, Bitly.getBitlyURL(url)); } catch
+//				 * (JSONException e) { // TODO Auto-generated catch block
+//				 * e.printStackTrace(); } catch (IOException e) { // TODO
+//				 * Auto-generated catch block e.printStackTrace(); }
+//				 */
+//			}
+//			temp = perl.postMatch();
+//		}
+//
+//		return rst;
+//	}
 }

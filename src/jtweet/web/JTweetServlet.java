@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.oro.text.perl.Perl5Util;
+
 import jtweet.oauth.Configuration;
 import jtweet.gae.GCache;
 import jtweet.oauth.Utils;
@@ -165,18 +167,45 @@ public class JTweetServlet extends HttpServlet {
 		String _browser = "other";
 		String UA = req.getHeader("User-Agent");
 		if (UA == null) {
-			browser = "NULL";
+			browser = "other";
 		} else if (UA.contains("MSIE 6.0")) {
 			browser = "ie6";
-		} else if (UA.contains("MSIE 7.0")) {
-			browser = "ie7";		
-		} else if (UA.contains("MSIE 8.0")){
-			browser = "ie8";
 		} else if (UA.contains("Opera Mini")){
 			browser = "operamini";
+		}else if (UA.contains("MSIE 7.0")) {		
+			browser = "ie7";
+		}else if(UA.contains("UCWEB")){
+			browser = "UC";
+		}else if(UA.contains("Chrome")){
+			browser = "Chrome";
 		} else {
 			browser = "other";
 		}
 				
+	}
+
+	protected String ShortURL(String text) {
+		String rst = text;
+		String url_reg = "m/\\b[a-zA-Z]+:\\/\\/[\\w_.\\-]+\\.[a-zA-Z]{2,6}[\\/\\w\\-~.?=&%#+$*!:;]*\\b/i";
+		String temp = text;
+
+		Perl5Util perl = new Perl5Util();
+		while (perl.match(url_reg, temp)) {
+			String url = perl.group(0);
+			if (url.length() > 30) {
+				String short_url = ShortURL.getIsgdURL(url);
+				if (short_url != null)
+					rst = rst.replace(url, short_url);
+				/*
+				 * try { rst = rst.replace(url, Bitly.getBitlyURL(url)); } catch
+				 * (JSONException e) { // TODO Auto-generated catch block
+				 * e.printStackTrace(); } catch (IOException e) { // TODO
+				 * Auto-generated catch block e.printStackTrace(); }
+				 */
+			}
+			temp = perl.postMatch();
+		}
+
+		return rst;
 	}
 }

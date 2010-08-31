@@ -157,4 +157,12 @@
 		<url-pattern>/trt</url-pattern>
 		<url-pattern>/mtrt</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>MobileMsgRpl</servlet-name>
+		<servlet-class>jtweet.web.MobileMsgReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MobileMsgRpl</servlet-name>
+		<url-pattern>/mmsgrply</url-pattern>		
+	</servlet-mapping>
 </web-app>

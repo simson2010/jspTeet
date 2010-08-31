@@ -785,3 +785,8 @@ a.pre_page:hover, a.next_page:hover
 {
 	margin:10px;
 }
+
+.hiddenClass
+{
+	display:none;	
+}

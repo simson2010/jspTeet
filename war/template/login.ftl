@@ -36,10 +36,12 @@
 				<div class="fixed"></div>
 				<center>
 					<label><input type="checkbox" id="stay" name="stayin" value="1"/>保持登录</label>
-					<label><input type="checkbox" id="oauthproxy" name="oauthproxy" value="1"/>使用OAuthProxy</label>
+					<label><input type="checkbox" id="oauthproxy" name="oauthproxy" checked="checked" value="1"/>使用OAuthProxy</label>
 				</center>
-				<button type="submit" id="sub_button" class="login_button">登录</button>
 				<button type="reset" id="reset_button" class="login_button">重置</button>
+				&nbsp;
+				<button type="submit" id="sub_button" class="login_button">登录</button>
+				
 				</form>
 			</div>
 			<div class="fixed"></div>

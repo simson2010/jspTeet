@@ -209,7 +209,7 @@ public class MobileHomeServlet extends JTweetServlet {
 			root.put("rate", twitter.rateLimitStatus());
 			root.put("title", "消息");
 			root.put("browser", browser);
-			root.put("addjs", "/js/message.js");
+			//root.put("addjs", "/js/message.js");
 			root.put("uri", uri);
 			root.put("page", paging.getPage());
 			root.put("msg", msg);
@@ -238,7 +238,7 @@ public class MobileHomeServlet extends JTweetServlet {
 			root.put("rate", twitter.rateLimitStatus());
 			root.put("title", "发件箱");
 			root.put("browser", browser);
-			root.put("addjs", "/js/outbox.js");
+			//root.put("addjs", "/js/outbox.js");
 			root.put("uri", uri);
 			root.put("page", paging.getPage());
 			root.put("msg", msg);

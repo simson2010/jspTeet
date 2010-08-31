@@ -342,14 +342,15 @@ function onUnBlock(id, callback, param) {
 	}
 };
 
-function onSendMessage(id, callback, param) {
+function onSendMessage(id,userId, callback, param) {
 	if (tweet_length > 0) {
 		var postdata;
-		if (send_id != "") {
+		if (send_id != ""&&sender_userId!="") {
 			postdata = {
 				type : "msg",
 				tweet_msg : $("#tweet_msg").val(),
-				id : send_id
+				id : send_id,
+				senderId : sender_userId
 			};
 			$.ajax({
 						url : "/action",
