@@ -9,7 +9,6 @@ import javax.jdo.PersistenceManagerFactory;
 import jtweet.dto.TweetAccessToken;
 import jtweet.factory.PMF;
 
-
 public class TweetAccessTokenDao {
 
 	private PersistenceManagerFactory pmf = null;

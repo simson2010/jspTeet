@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jtweet.oauth.Utils;
-
 import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.User;
